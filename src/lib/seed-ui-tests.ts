@@ -1,5 +1,6 @@
 import type { Problem, UiWorkspace } from "./types";
 import { HEADER, uiTestsB } from "./seed-ui-tests-b";
+import { uiTestsC } from "./seed-ui-tests-c";
 
 // The tests some React UI problems ship with, keyed by slug and merged into
 // the React template's `tests` at seed time, like the per-language judges.
@@ -218,6 +219,7 @@ export const uiTests: Record<string, string> = {
   "react-tabs": tabs,
   "react-accordion": accordion,
   ...uiTestsB,
+  ...uiTestsC,
 };
 
 /** The problem's UI workspace with its tests merged into the React template. */

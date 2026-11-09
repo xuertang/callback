@@ -529,6 +529,18 @@ export const companies: Company[] = ([] = [
     ],
   },
   {
+    slug: "disney",
+    name: "Disney",
+    blurb:
+      "Loops shaped by each organization — Streaming, Experiences, data — with practical coding, a code review round for leads, trade-off-heavy design and culture-fit conversations.",
+    process: [
+      "Recruiter screen: proudest project, infrastructure experience, why Disney",
+      "Technical phone screen: one or two practical coding questions",
+      "Onsite: coding or code review, system design, and behavioral rounds",
+      "Hiring-manager and culture-fit conversation",
+    ],
+  },
+  {
     slug: "docusign",
     name: "DocuSign",
     blurb:
@@ -584,13 +596,13 @@ export const companies: Company[] = ([] = [
     slug: "duolingo",
     name: "Duolingo",
     blurb:
-      "Learning-product loops that pair practical coding with product sense and design questions about lessons and experimentation.",
+      "Karat-run intern screens, a phone screen on the encrypt-and-decrypt variant, a shared-screen debugging round, pair programming and a code review of a real pull request.",
     process: [
       "Recruiter screen",
-      "Technical phone screen",
-      "Onsite: two coding rounds",
-      "Product-minded design round",
-      "Behavioral and culture round",
+      "Karat screen: three complexity questions, then one coding problem",
+      "Technical phone screen: coding, then debugging on the interviewer's screen",
+      "Pair programming and code review rounds",
+      "Final round with the team",
     ],
   },
   {

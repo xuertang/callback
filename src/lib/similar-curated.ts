@@ -64,6 +64,16 @@ export const curatedSimilar: Record<string, string[]> = {
   "design-api-with-flaky-identity-provider": ["design-token-service-client", "design-acl-check-service", "design-rpc-layer-over-rest"],
   "design-collaborative-spreadsheet": ["design-data-table-component", "design-materialized-view-dag-cache", "design-music-streaming-frontend"],
   "design-data-table-component": ["design-collaborative-spreadsheet", "design-autocomplete-frontend", "design-photo-sharing-frontend"],
+  "design-flash-sale-virtual-queue": ["design-global-quota-system", "design-rate-limiter", "design-cloud-queue-service", "design-disk-based-inventory"],
+  "design-microblogging-dashboard": ["design-news-feed", "design-pinterest-home-feed", "design-notification-system"],
+  "design-product-browse-and-search": ["design-marketplace-catalog", "design-search-typeahead", "design-visual-search", "design-local-business-reviews"],
+  "design-multi-game-leaderboard": ["design-distributed-kv-store", "design-ad-click-aggregator", "design-global-quota-system"],
+  "design-personalized-recommendations": ["design-pinterest-home-feed", "design-visual-search", "design-news-feed", "design-ml-evaluation-platform"],
+  "design-clickstream-pipeline": ["design-ads-event-reporting", "design-distributed-metrics-system", "design-centralized-logging", "design-hybrid-analytics-pipeline"],
+  "design-hybrid-analytics-pipeline": ["design-clickstream-pipeline", "design-multi-tenant-analytics-platform", "design-metadata-catalog-schema-registry"],
+  "design-shopping-cart-frontend": ["design-feature-flags-frontend", "design-photo-sharing-frontend", "design-data-table-component", "design-autocomplete-frontend"],
+  "design-feature-flags-frontend": ["design-shopping-cart-frontend", "design-token-service-client", "design-client-logging-library"],
+  "design-batch-writer": ["design-client-logging-library", "design-cloud-queue-service", "design-token-service-client", "design-rpc-layer-over-rest"],
 };
 
 /**

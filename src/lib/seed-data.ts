@@ -61,6 +61,20 @@ import { jsPlaybookProblemsA } from "./seed-js-playbook-a";
 import { jsPlaybookProblemsB } from "./seed-js-playbook-b";
 import { jsPlaybookProblemsC } from "./seed-js-playbook-c";
 import { jsPlaybookProblemsD } from "./seed-js-playbook-d";
+import { disneyProblemsA } from "./seed-disney-a";
+import { disneyProblemsB } from "./seed-disney-b";
+import { disneyProblemsC } from "./seed-disney-c";
+import { disneyProblemsD } from "./seed-disney-d";
+import { disneyProblemsE } from "./seed-disney-e";
+import { disneyDesignProblemsA } from "./seed-disney-design-a";
+import { disneyDesignProblemsB } from "./seed-disney-design-b";
+import { disneyFrontendProblems } from "./seed-disney-frontend";
+import { disneySqlProblems } from "./seed-disney-sql";
+import { disneyBehavioralProblems } from "./seed-disney-behavioral";
+import { duolingoProblemsA } from "./seed-duolingo-a";
+import { duolingoProblemsB } from "./seed-duolingo-b";
+import { duolingoChessProblems } from "./seed-duolingo-chess";
+import { duolingoQuizProblems } from "./seed-duolingo-quiz";
 import { appleProblemsA } from "./seed-apple-a";
 import { appleProblemsB } from "./seed-apple-b";
 import { appleProblemsC } from "./seed-apple-c";
@@ -3104,6 +3118,20 @@ ORDER BY department, employee;
   ...jsPlaybookProblemsB,
   ...jsPlaybookProblemsC,
   ...jsPlaybookProblemsD,
+  ...disneyProblemsA,
+  ...disneyProblemsB,
+  ...disneyProblemsC,
+  ...disneyProblemsD,
+  ...disneyProblemsE,
+  ...disneyDesignProblemsA,
+  ...disneyDesignProblemsB,
+  ...disneyFrontendProblems,
+  ...disneySqlProblems,
+  ...disneyBehavioralProblems,
+  ...duolingoProblemsA,
+  ...duolingoProblemsB,
+  ...duolingoChessProblems,
+  ...duolingoQuizProblems,
 ];
 
 export const tracks: Track[] = [

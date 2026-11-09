@@ -272,6 +272,23 @@ const SNOWFLAKE_GUIDE_PICKS: string[] = [
   "valid-palindrome-ii",
 ];
 
+/**
+ * The LeetCode questions Disney loops ask as-is, from the reports read on
+ * 8 Nov 2026 (one report each; the snapshot has no Disney tag). Nominal
+ * scores, like the guide picks.
+ */
+const DISNEY_PICKS: string[] = [
+  "ransom-note",
+  "reverse-string",
+  "two-sum",
+  "two-sum-ii-input-array-is-sorted",
+  "3sum",
+  "rotting-oranges",
+  "longest-consecutive-sequence",
+  "generate-parentheses",
+  "find-if-path-exists-in-graph",
+];
+
 /** Questions the snapshot lacks, with LeetCode's own metadata. */
 const META: Record<string, NonNullable<CuratedQuestion["meta"]>> = {
   "maximum-number-of-upgradable-servers": {
@@ -326,6 +343,13 @@ export const curatedListings: CuratedListing[] = [
         scores: { all: GUIDE_PICK_SCORE },
       })),
     ],
+  },
+  {
+    company: "disney",
+    questions: DISNEY_PICKS.map((slug) => ({
+      slug,
+      scores: { all: GUIDE_PICK_SCORE },
+    })),
   },
 ];
 
