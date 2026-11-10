@@ -389,13 +389,13 @@ export const companies: Company[] = ([] = [
     slug: "bytedance",
     name: "ByteDance",
     blurb:
-      "Multi-round algorithm-heavy loops — typically several coding interviews in sequence, followed by design and HR rounds.",
+      "A strict one-round-at-a-time funnel: a resume deep dive opens every round, then LeetCode-medium coding with your own test cases, system design, and a hiring-manager round. Teams differ sharply in bar and format.",
     process: [
-      "Recruiter screen",
-      "Online assessment",
-      "Two to three technical rounds of algorithms",
-      "System design round",
-      "HR round",
+      "Recruiter call, sometimes skipped",
+      "Round one: project deep dive, then one or two coding problems",
+      "Round two: more coding, or system design",
+      "Round three: hiring manager, behavioral plus another problem",
+      "Team match with HR",
     ],
   },
   {
@@ -1415,13 +1415,13 @@ export const companies: Company[] = ([] = [
     slug: "tiktok",
     name: "TikTok",
     blurb:
-      "High-volume loops with several algorithm rounds, often back to back, then a design round and a hiring-manager conversation.",
+      "ByteDance's process on TikTok's teams: a CodeSignal assessment for interns and new graduates, rounds scheduled one at a time, oral fundamentals for infra and SRE roles, and a hiring manager who asks about pace.",
     process: [
-      "Recruiter screen",
-      "Technical phone screen",
-      "Second technical phone screen",
-      "Onsite: two to three algorithm rounds",
-      "Hiring-manager and HR round",
+      "CodeSignal assessment for interns and new graduates",
+      "Phone screen: resume deep dive, then coding with your own test cases",
+      "Second technical round: coding or system design",
+      "USDS and infra loops add a Linux and networking round",
+      "Hiring-manager round, then team match",
     ],
   },
   {

@@ -75,6 +75,23 @@ import { duolingoProblemsA } from "./seed-duolingo-a";
 import { duolingoProblemsB } from "./seed-duolingo-b";
 import { duolingoChessProblems } from "./seed-duolingo-chess";
 import { duolingoQuizProblems } from "./seed-duolingo-quiz";
+import { tiktokProblemsA } from "./seed-tiktok-a";
+import { tiktokProblemsB } from "./seed-tiktok-b";
+import { tiktokProblemsC } from "./seed-tiktok-c";
+import { tiktokProblemsD } from "./seed-tiktok-d";
+import { tiktokProblemsE } from "./seed-tiktok-e";
+import { tiktokProblemsF } from "./seed-tiktok-f";
+import { tiktokProblemsG } from "./seed-tiktok-g";
+import { tiktokProblemsH } from "./seed-tiktok-h";
+import { tiktokProblemsI } from "./seed-tiktok-i";
+import { tiktokProblemsJ } from "./seed-tiktok-j";
+import { tiktokProblemsK } from "./seed-tiktok-k";
+import { tiktokDesignProblemsA } from "./seed-tiktok-design-a";
+import { tiktokDesignProblemsB } from "./seed-tiktok-design-b";
+import { tiktokConceptProblems } from "./seed-tiktok-concepts";
+import { tiktokFrontendProblems } from "./seed-tiktok-frontend";
+import { tiktokBehavioralProblems } from "./seed-tiktok-behavioral";
+import { withCompanyTags } from "./seed-company-tags";
 import { appleProblemsA } from "./seed-apple-a";
 import { appleProblemsB } from "./seed-apple-b";
 import { appleProblemsC } from "./seed-apple-c";
@@ -169,7 +186,7 @@ import type { Problem, Track } from "./types";
 // Canonical seed content. Postgres is the runtime read path (src/lib/data.ts);
 // edit content here, then sync the database with `npm run db:seed`.
 
-export const problems: Problem[] = [
+const authoredProblems: Problem[] = [
   {
     slug: "pair-sum-sorted",
     title: "Pair Sum in a Sorted Array",
@@ -3132,7 +3149,27 @@ ORDER BY department, employee;
   ...duolingoProblemsB,
   ...duolingoChessProblems,
   ...duolingoQuizProblems,
+  ...tiktokProblemsA,
+  ...tiktokProblemsB,
+  ...tiktokProblemsC,
+  ...tiktokProblemsD,
+  ...tiktokProblemsE,
+  ...tiktokProblemsF,
+  ...tiktokProblemsG,
+  ...tiktokProblemsH,
+  ...tiktokProblemsI,
+  ...tiktokProblemsJ,
+  ...tiktokProblemsK,
+  ...tiktokDesignProblemsA,
+  ...tiktokDesignProblemsB,
+  ...tiktokConceptProblems,
+  ...tiktokFrontendProblems,
+  ...tiktokBehavioralProblems,
 ];
+
+// Every authored problem, plus the companies that share a question another
+// bank already holds (seed-company-tags.ts).
+export const problems: Problem[] = withCompanyTags(authoredProblems);
 
 export const tracks: Track[] = [
   {

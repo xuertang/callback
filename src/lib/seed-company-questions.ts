@@ -289,6 +289,75 @@ const DISNEY_PICKS: string[] = [
   "find-if-path-exists-in-graph",
 ];
 
+/**
+ * LeetCode questions that TikTok and ByteDance interview reports name
+ * (read 10 Nov 2026) and the snapshot's tags for those companies lack.
+ * Nominal scores, like the guide picks.
+ */
+const TIKTOK_PICKS: string[] = [
+  "longest-repeating-character-replacement",
+  "min-stack",
+  "search-in-rotated-sorted-array-ii",
+  "flatten-a-multilevel-doubly-linked-list",
+  "interval-list-intersections",
+  "create-binary-tree-from-descriptions",
+  "construct-binary-tree-from-preorder-and-postorder-traversal",
+  "calculate-digit-sum-of-a-string",
+  "number-of-provinces",
+  "majority-element-ii",
+  "mini-parser",
+  "ways-to-make-a-fair-array",
+  "kth-smallest-subarray-sum",
+  "block-placement-queries",
+];
+
+const BYTEDANCE_PICKS: string[] = [
+  "course-schedule-ii",
+  "lfu-cache",
+  "binary-tree-maximum-path-sum",
+  "reverse-nodes-in-k-group",
+  "possible-bipartition",
+  "spiral-matrix",
+  "stickers-to-spell-word",
+  "shortest-path-in-a-grid-with-obstacles-elimination",
+  "word-search-ii",
+  "valid-parenthesis-string",
+  "largest-rectangle-in-histogram",
+  "min-stack",
+  "max-stack",
+  "find-median-from-data-stream",
+  "longest-substring-with-at-most-k-distinct-characters",
+  "search-in-rotated-sorted-array-ii",
+  "minimum-window-substring",
+  "flatten-a-multilevel-doubly-linked-list",
+  "interval-list-intersections",
+  "create-binary-tree-from-descriptions",
+  "time-based-key-value-store",
+  "reverse-linked-list",
+  "non-overlapping-intervals",
+  "construct-binary-tree-from-preorder-and-postorder-traversal",
+  "design-tic-tac-toe",
+  "longest-substring-without-repeating-characters",
+  "alien-dictionary",
+  "calculate-digit-sum-of-a-string",
+  "number-of-provinces",
+  "path-sum-iii",
+  "majority-element-ii",
+  "single-threaded-cpu",
+  "fruit-into-baskets",
+  "sell-diminishing-valued-colored-balls",
+  "burst-balloons",
+  "all-paths-from-source-lead-to-destination",
+  "sparse-matrix-multiplication",
+  "missing-ranges",
+  "meeting-rooms",
+  "meeting-rooms-ii",
+  "meeting-rooms-iii",
+  "amount-of-time-for-binary-tree-to-be-infected",
+  "lowest-common-ancestor-of-a-binary-tree-iii",
+  "find-numbers-with-even-number-of-digits",
+];
+
 /** Questions the snapshot lacks, with LeetCode's own metadata. */
 const META: Record<string, NonNullable<CuratedQuestion["meta"]>> = {
   "maximum-number-of-upgradable-servers": {
@@ -347,6 +416,20 @@ export const curatedListings: CuratedListing[] = [
   {
     company: "disney",
     questions: DISNEY_PICKS.map((slug) => ({
+      slug,
+      scores: { all: GUIDE_PICK_SCORE },
+    })),
+  },
+  {
+    company: "tiktok",
+    questions: TIKTOK_PICKS.map((slug) => ({
+      slug,
+      scores: { all: GUIDE_PICK_SCORE },
+    })),
+  },
+  {
+    company: "bytedance",
+    questions: BYTEDANCE_PICKS.map((slug) => ({
       slug,
       scores: { all: GUIDE_PICK_SCORE },
     })),
