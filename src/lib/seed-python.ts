@@ -296,6 +296,58 @@ def resize_buckets(buckets, name, new_size):
     # Your code here
     return buckets
 `,
+    solutionCode: `CAPACITY = 1000
+
+
+def pack_buckets(requests):
+    # Validate everything first, so a rejected request allocates nothing.
+    total = 0
+    for name, size in requests:
+        if size < 0:
+            raise ValueError("negative size: " + name)
+        total += size
+    if total > CAPACITY:
+        raise ValueError("layout exceeds " + str(CAPACITY) + " IDs")
+
+    layout = []
+    cursor = 0
+    for name, size in requests:
+        if size == 0:
+            layout.append([name, -1, -1])
+        else:
+            layout.append([name, cursor, cursor + size - 1])
+            cursor += size
+    return layout
+
+
+def resize_buckets(buckets, name, new_size):
+    if new_size < 0:
+        raise ValueError("negative size")
+
+    def size_of(bucket):
+        return 0 if bucket[1] == -1 else bucket[2] - bucket[1] + 1
+
+    target = next((bucket for bucket in buckets if bucket[0] == name), None)
+    if target is None:
+        raise KeyError("unknown bucket: " + name)
+    total = sum(size_of(bucket) for bucket in buckets)
+    if total - size_of(target) + new_size > CAPACITY:
+        raise ValueError("resize exceeds " + str(CAPACITY) + " IDs")
+
+    # Build a fresh layout: the input is never touched, even on success.
+    delta = new_size - size_of(target)
+    out = []
+    past = False
+    for bucket_name, start, end in buckets:
+        if bucket_name == name:
+            past = True
+            out.append([bucket_name, start, start + new_size - 1])
+        elif past:
+            out.append([bucket_name, start + delta, end + delta])
+        else:
+            out.append([bucket_name, start, end])
+    return out
+`,
     driverCode: `def __run_allocator_case(op, data, name, size):
     snapshot = [list(row) for row in data]
     try:
@@ -673,6 +725,50 @@ def can_reach(roads, src, dst, k):
         def haveVisited(self, url):
             # TODO: has url ever been visited?
             pass
+
+    obj = None
+    res = []
+    for op, arg in zip(operations, args):
+        if op == 'BrowserSession':
+            obj = BrowserSession(*arg)
+            res.append(None)
+        elif op == 'visit':
+            obj.visit(*arg)
+            res.append(None)
+        elif op == 'back':
+            res.append(obj.back(*arg))
+        elif op == 'forward':
+            res.append(obj.forward(*arg))
+        elif op == 'haveVisited':
+            res.append(obj.haveVisited(*arg))
+    return res
+`,
+    solutionCode: `def solution(operations, args):
+    class BrowserSession:
+        # A list of pages with a cursor, plus a set of every url ever visited.
+        def __init__(self, homepage):
+            self.history = [homepage]
+            self.cursor = 0
+            self.visited = {homepage}
+
+        def visit(self, url):
+            del self.history[self.cursor + 1 :]  # clear the forward history
+            self.history.append(url)
+            self.cursor += 1
+            self.visited.add(url)
+
+        def back(self, steps):
+            if steps > 0:
+                self.cursor = max(0, self.cursor - steps)
+            return self.history[self.cursor]
+
+        def forward(self, steps):
+            if steps > 0:
+                self.cursor = min(len(self.history) - 1, self.cursor + steps)
+            return self.history[self.cursor]
+
+        def haveVisited(self, url):
+            return url in self.visited
 
     obj = None
     res = []

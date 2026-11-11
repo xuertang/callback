@@ -65,6 +65,14 @@ import { snowflakePythonJudgesW } from "../lib/seed-python-snowflake-w";
 import { snowflakePythonJudgesU } from "../lib/seed-python-snowflake-u";
 import { snowflakePythonJudgesV } from "../lib/seed-python-snowflake-v";
 import { snowflakePythonJudgesX } from "../lib/seed-python-snowflake-x";
+import { airbnbPythonJudges } from "../lib/seed-python-airbnb";
+import { airbnbPythonJudgesB } from "../lib/seed-python-airbnb-b";
+import { disneyPythonJudges } from "../lib/seed-python-disney";
+import { duolingoPythonJudges } from "../lib/seed-python-duolingo";
+import { tiktokPythonJudgesA } from "../lib/seed-python-tiktok-a";
+import { tiktokPythonJudgesB } from "../lib/seed-python-tiktok-b";
+import { tiktokPythonJudgesC } from "../lib/seed-python-tiktok-c";
+import { tiktokPythonJudgesD } from "../lib/seed-python-tiktok-d";
 import { typescriptJudges } from "../lib/seed-typescript";
 import { appleTypescriptJudges } from "../lib/seed-typescript-apple";
 import { appleTypescriptJudgesB } from "../lib/seed-typescript-apple-b";
@@ -304,7 +312,15 @@ async function main() {
                 snowflakePythonJudgesW[problem.slug] ??
                 snowflakePythonJudgesU[problem.slug] ??
                 snowflakePythonJudgesV[problem.slug] ??
-                snowflakePythonJudgesX[problem.slug],
+                snowflakePythonJudgesX[problem.slug] ??
+                airbnbPythonJudges[problem.slug] ??
+                airbnbPythonJudgesB[problem.slug] ??
+                disneyPythonJudges[problem.slug] ??
+                duolingoPythonJudges[problem.slug] ??
+                tiktokPythonJudgesA[problem.slug] ??
+                tiktokPythonJudgesB[problem.slug] ??
+                tiktokPythonJudgesC[problem.slug] ??
+                tiktokPythonJudgesD[problem.slug],
               typescript:
                 typescriptJudges[problem.slug] ??
                 appleTypescriptJudges[problem.slug] ??
